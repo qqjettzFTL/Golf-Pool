@@ -4,7 +4,8 @@ require('dotenv').config({ path: '../.env' }); // load env vars
 const express = require('express');
 const cors = require('cors');
 const db = require('./db');
-const draftRoutes = require('./draftRoutes');
+const pools = require('./pools');
+// const draftRoutes = require('./draftRoutes');
 
 
 // Initialize Express app
@@ -15,7 +16,8 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());           // allows frontend to make requests to this API
 app.use(express.json());   // parses incoming JSON payloads
 
-app.use('/api', draftRoutes); // Post draftRoutes call
+app.use('/api', pools); // Post pools call
+// app.use('/api', draftRoutes); // Post draftRoutes call
 
 // Test route to confirm API is running
 app.get('/', (req, res) => {
