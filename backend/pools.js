@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('./db'); // 🔁 renamed from pool to db for consistency
+const db = require('./db');
 
 // POST pools
 router.post('/pools', async (req, res) => {
